@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Espace Employés - Couche-Tard</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+        if (!sessionStorage.getItem('loggedIn')) window.location.href = 'login.html';
+    </script>
+</head>
+<body>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/b/b7/Couche-Tard_logo.svg/2560px-Couche-Tard_logo.svg.png" alt="Logo Couche-Tard" />
+        <h1>Espace Employés</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Annonces</h2>
+            <ul>
+                <li>Réunion d'équipe mardi à 9h</li>
+                <li>Nouvelles procédures COVID à lire</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Procédures</h2>
+            <ul>
+                <li>Procédure d'ouverture</li>
+                <li>Fermeture sécurisée</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Documents à télécharger</h2>
+            <form id="uploadForm">
+                <input type="file" id="documentInput" accept=".pdf,.doc,.docx" />
+                <button type="submit">Ajouter un document</button>
+            </form>
+            <ul>
+                <li><a href="#">Manuel d'ouverture (PDF)</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Annuaire des employés</h2>
+            <input type="text" id="searchInput" placeholder="Rechercher un employé..." />
+            <table id="annuaireTable">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Téléphone</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <form id="addForm">
+                <input type="text" id="nom" placeholder="Nom" required />
+                <input type="text" id="telephone" placeholder="Téléphone" required />
+                <button type="submit">Ajouter</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        &copy; Couche-Tard
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
